@@ -1,0 +1,35 @@
+{
+    "autoupdate": false,
+    "model": "my-local-llm/qwen/qwen3-1.7b",
+    "small_model": "my-local-llm/liquid/lfm2.5-1.2b",
+    "provider": {
+        "my-local-llm": {
+            "name": "My Local LLM",
+            "options": {
+                "baseURL": "http://localhost:12434/v1"
+            },
+            "models": {
+                "qwen/qwen3-4b": {
+                    "name": "qwen/qwen3-4b"
+                },
+                "qwen/qwen3-1.7b": {
+                    "name": "qwen/qwen3-1.7b",
+                    "limit": {
+                        "context": 15000,
+                        "output": 4096
+                    }
+                },
+                "liquid/lfm2.5-1.2b": {
+                    "name": "liquid/lfm2.5-1.2b",
+                    "limit": {
+                        "context": 128000,
+                        "output": 65536
+                    }
+                }
+            }
+        }
+    },
+    "permission": {
+        "*": "ask"
+    }
+}
