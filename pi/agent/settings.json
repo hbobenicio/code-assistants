@@ -1,0 +1,6 @@
+{
+    "enableInstallTelemetry": false,
+    "compaction": {
+        "enabled": false
+    }
+}

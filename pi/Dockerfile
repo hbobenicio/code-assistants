@@ -9,6 +9,7 @@ USER node
 RUN mkdir -p /home/node/.npm-global /home/node/workspace
 RUN npm config set prefix /home/node/.npm-global
 RUN npm config set --global min-release-age 7
+RUN npm config set --global ignore-scripts true
 ENV PATH="/home/node/.npm-global/bin:$PATH"
 
 VOLUME  /home/node/workspace
@@ -18,14 +19,14 @@ ENV PI_SKIP_VERSION_CHECK=1
 ENV PI_OFFLINE=1
 RUN npm install -g '@earendil-works/pi-coding-agent@0.74.0'
 # RUN pi install "npm:pi-permission-system"
-RUN pi install "npm:@plannotator/pi-extension"
+# RUN pi install "npm:@plannotator/pi-extension"
 # RUN pi install "npm:@juicesharp/rpiv-ask-user-question"
-RUN pi install "npm:pi-subagents@v0.24.2"
+# RUN pi install "npm:pi-subagents@v0.24.2"
 
 RUN ln -s /usr/bin/fdfind /home/node/.npm-global/bin/fd
 
 COPY --chown=node:node ./pi/agent /home/node/.pi/agent/
 
-CMD ["pi"]
-# CMD ["bash"]
+# CMD ["pi"]
+CMD ["bash"]
 

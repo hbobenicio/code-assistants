@@ -10,7 +10,8 @@ USER ai-code
 
 RUN mkdir -p /home/ai-code/.npm-global
 RUN npm config set prefix /home/ai-code/.npm-global
-RUN npm config set --global min-release-age 14
+RUN npm config set --global min-release-age 7
+RUN npm config set --global ignore-scripts true
 ENV PATH="/home/ai-code/.npm-global/bin:$PATH"
 
 VOLUME  /home/ai-code/workspace
@@ -19,7 +20,6 @@ WORKDIR /home/ai-code/workspace
 ENV PI_SKIP_VERSION_CHECK=1
 ENV PI_OFFLINE=1
 RUN npm install -g '@earendil-works/pi-coding-agent@0.74.0'
-RUN pi install npm:pi-permission-system@0.4.9
 
 COPY --chown=ai-code:ai-code ./agent /home/ai-code/.pi/agent/
 
