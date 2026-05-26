@@ -17,3 +17,10 @@ make
 ```bash
 docker run -it --rm --network some-net -v my-workspace:/home/node/workspace hbmo-opencode
 ```
+
+### Pi
+
+```bash
+docker run -it --rm --network some-net -v my-workspace:/home/node/workspace hbmo-pi
+```
+
