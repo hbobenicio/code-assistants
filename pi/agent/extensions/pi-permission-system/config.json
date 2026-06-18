@@ -3,12 +3,11 @@
     "*": "ask",
     "path": {
       "*.env": "deny",
-      "*.env.*": "deny",
+      "*.env.*": "deny"
     },
     "bash": {
-      "rm*": "deny",
+      "rm *": "deny",
       "sudo *": "deny"
     }
   }
 }
-

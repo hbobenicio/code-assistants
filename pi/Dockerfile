@@ -1,8 +1,8 @@
 FROM node:24.15.0-trixie-slim
 
 RUN apt update \
- && apt install -y fd-find ripgrep git \
- && rm -rf /var/lib/apt/lists/*
+    && apt install -y fd-find ripgrep git procps \
+    && rm -rf /var/lib/apt/lists/*
 
 USER node
 
@@ -25,7 +25,7 @@ WORKDIR /home/node/workspace
 # PI coding agent installation / setup
 ENV PI_SKIP_VERSION_CHECK=1
 ENV PI_OFFLINE=1
-RUN npm install -g --omit=optional --omit=dev --ignore-scripts '@earendil-works/pi-coding-agent@0.74.0'
+RUN npm install -g --omit=optional --omit=dev --ignore-scripts '@earendil-works/pi-coding-agent'
 RUN pi install "npm:pi-permission-system"
 RUN pi install "npm:@juicesharp/rpiv-ask-user-question"
 RUN pi install "npm:pi-subagents"
