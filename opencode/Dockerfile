@@ -10,8 +10,9 @@ USER node
 RUN mkdir -p /home/node/.npm-global
 RUN npm config set prefix /home/node/.npm-global
 RUN npm config set --global min-release-age 7
+RUN npm config set --global ignore-scripts true
 ENV PATH="/home/node/.npm-global/bin:/home/node/bin:$PATH"
-RUN npm install -g "opencode-ai@1.15.3"
+RUN npm install -g --omit=optional --omit=dev "opencode-ai@1.15.3"
 
 VOLUME  /home/node/workspace
 WORKDIR /home/node/workspace
