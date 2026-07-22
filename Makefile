@@ -6,4 +6,4 @@ opencode:
 
 .PHONY: pi
 pi:
-	docker build . -f ./pi/Dockerfile -t hbmo-pi
+	docker build . -f ./pi/Dockerfile -t hbmo-pi --no-cache
