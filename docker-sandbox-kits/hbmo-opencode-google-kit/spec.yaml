@@ -1,0 +1,13 @@
+schemaVersion: "1"
+kind: sandbox
+name: hbmo-opencode
+sandbox:
+  image: "docker/sandbox-templates:opencode"
+  entrypoint:
+    run: [opencode, "--print-logs"]
+
+network:
+  allowedDomains:
+    - "opencode.ai:443"
+    - "generativelanguage.googleapis.com:443"
+
