@@ -2,7 +2,7 @@ all: opencode pi
 
 .PHONY: opencode
 opencode:
-	docker build . -f ./opencode/Dockerfile -t hbmo-opencode
+	docker build . -f ./opencode/Dockerfile -t hbmo-opencode --no-cache
 
 .PHONY: pi
 pi:

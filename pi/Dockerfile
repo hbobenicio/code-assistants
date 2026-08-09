@@ -28,7 +28,6 @@ ENV PI_OFFLINE=1
 RUN npm install -g --omit=optional --omit=dev --ignore-scripts '@earendil-works/pi-coding-agent'
 RUN pi install "npm:pi-permission-system"
 RUN pi install "npm:@juicesharp/rpiv-ask-user-question"
-RUN pi install "npm:pi-subagents"
 
 # Do we really need this?!?
 RUN ln -s /usr/bin/fdfind /home/node/.npm-global/bin/fd
